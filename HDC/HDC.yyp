@@ -32,9 +32,16 @@
     "IDEVersion": "2023.1.1.62",
   },
   "resources": [
-    {"id":{"name":"spr_player_mirmilo_andando_lateral","path":"sprites/spr_player_mirmilo_andando_lateral/spr_player_mirmilo_andando_lateral.yy",},"order":12,},
-    {"id":{"name":"spr_player_mirmilo_parado_frente","path":"sprites/spr_player_mirmilo_parado_frente/spr_player_mirmilo_parado_frente.yy",},"order":0,},
+    {"id":{"name":"spr_player_mirmilo_andando_baixo","path":"sprites/spr_player_mirmilo_andando_baixo/spr_player_mirmilo_andando_baixo.yy",},"order":14,},
+    {"id":{"name":"spr_player_mirmilo_andando_cima","path":"sprites/spr_player_mirmilo_andando_cima/spr_player_mirmilo_andando_cima.yy",},"order":15,},
+    {"id":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},"order":1,},
+    {"id":{"name":"spr_camera","path":"sprites/spr_camera/spr_camera.yy",},"order":16,},
+    {"id":{"name":"spr_player_mirmilo_andando_lateral_esq","path":"sprites/spr_player_mirmilo_andando_lateral_esq/spr_player_mirmilo_andando_lateral_esq.yy",},"order":13,},
+    {"id":{"name":"spr_player_mirmilo_andando_lateral_dir","path":"sprites/spr_player_mirmilo_andando_lateral_dir/spr_player_mirmilo_andando_lateral_dir.yy",},"order":12,},
+    {"id":{"name":"spr_player_mirmilo_parado","path":"sprites/spr_player_mirmilo_parado/spr_player_mirmilo_parado.yy",},"order":0,},
     {"id":{"name":"obj_player_mirmilo","path":"objects/obj_player_mirmilo/obj_player_mirmilo.yy",},"order":0,},
+    {"id":{"name":"obj_inimigo_teste","path":"objects/obj_inimigo_teste/obj_inimigo_teste.yy",},"order":2,},
+    {"id":{"name":"spr_inimigo_teste","path":"sprites/spr_inimigo_teste/spr_inimigo_teste.yy",},"order":17,},
     {"id":{"name":"Ambiente1","path":"rooms/Ambiente1/Ambiente1.yy",},"order":0,},
   ],
   "RoomOrderNodes": [

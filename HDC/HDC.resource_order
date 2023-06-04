@@ -16,6 +16,13 @@
     {"name":"Sprites","order":1,"path":"folders/Sprites.yy",},
   ],
   "ResourceOrderSettings": [
-    {"name":"spr_player_mirmilo_andando_lateral","order":12,"path":"sprites/spr_player_mirmilo_andando_lateral/spr_player_mirmilo_andando_lateral.yy",},
+    {"name":"spr_player_mirmilo_andando_baixo","order":14,"path":"sprites/spr_player_mirmilo_andando_baixo/spr_player_mirmilo_andando_baixo.yy",},
+    {"name":"spr_player_mirmilo_andando_cima","order":15,"path":"sprites/spr_player_mirmilo_andando_cima/spr_player_mirmilo_andando_cima.yy",},
+    {"name":"obj_camera","order":1,"path":"objects/obj_camera/obj_camera.yy",},
+    {"name":"spr_camera","order":16,"path":"sprites/spr_camera/spr_camera.yy",},
+    {"name":"spr_player_mirmilo_andando_lateral_esq","order":13,"path":"sprites/spr_player_mirmilo_andando_lateral_esq/spr_player_mirmilo_andando_lateral_esq.yy",},
+    {"name":"spr_player_mirmilo_andando_lateral_dir","order":12,"path":"sprites/spr_player_mirmilo_andando_lateral_dir/spr_player_mirmilo_andando_lateral_dir.yy",},
+    {"name":"obj_inimigo_teste","order":2,"path":"objects/obj_inimigo_teste/obj_inimigo_teste.yy",},
+    {"name":"spr_inimigo_teste","order":17,"path":"sprites/spr_inimigo_teste/spr_inimigo_teste.yy",},
   ],
 }
