@@ -1,4 +1,4 @@
-/// @description Etapas do Mirmilo
+/// @description Etapas do jogador
 
 //teclas
 right = keyboard_check(ord("D")) or keyboard_check(vk_right);
@@ -20,17 +20,17 @@ if _xx != 0 or _yy != 0 {
 	x += hspd;
 	y += vspd;
 if right = 1 {
-	sprite_index = spr_player_mirmilo_andando_lateral_dir;
+	sprite_index = spr_jogador_mirmilo_andando_lateral_dir;
 }
 if left = 1 {
-	sprite_index = spr_player_mirmilo_andando_lateral_esq;
+	sprite_index = spr_jogador_mirmilo_andando_lateral_esq;
 }
 if down = 1 {
-	sprite_index = spr_player_mirmilo_andando_baixo;
+	sprite_index = spr_jogador_mirmilo_andando_baixo;
 }
 if up = 1 {
-	sprite_index = spr_player_mirmilo_andando_cima;
+	sprite_index = spr_jogador_mirmilo_andando_cima;
 }
 } else {
-	sprite_index = spr_player_mirmilo_parado;
+	sprite_index = spr_jogador_mirmilo_parado;
 }

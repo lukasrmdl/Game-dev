@@ -1,7 +1,7 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "spr_player_mirmilo_andando_cima",
+  "name": "spr_jogador_mirmilo_andando_cima",
   "bbox_bottom": 42,
   "bbox_left": 8,
   "bbox_right": 24,
@@ -35,7 +35,7 @@
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "spr_player_mirmilo_andando_cima",
+    "name": "spr_jogador_mirmilo_andando_cima",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -57,10 +57,10 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"2e3dbdca-0535-4703-beee-9eca20680453","path":"sprites/spr_player_mirmilo_andando_cima/spr_player_mirmilo_andando_cima.yy",},},},"Disabled":false,"id":"b4a13e12-49d1-4cb7-ba01-f19922d4f721","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"e1dd3e25-d76a-4129-a010-2eb1f3527e6b","path":"sprites/spr_player_mirmilo_andando_cima/spr_player_mirmilo_andando_cima.yy",},},},"Disabled":false,"id":"c39b0b3c-c188-4297-b5b2-4fd1135490b2","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"92b46b9a-a803-4ab3-b19f-8ac06453216d","path":"sprites/spr_player_mirmilo_andando_cima/spr_player_mirmilo_andando_cima.yy",},},},"Disabled":false,"id":"bc85c131-6955-42f6-aec9-4dfdda583679","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"9ac576a8-bba6-4c40-ba7e-e8c5da733597","path":"sprites/spr_player_mirmilo_andando_cima/spr_player_mirmilo_andando_cima.yy",},},},"Disabled":false,"id":"bd1fbe71-75bc-451d-b121-ad3babe25b48","IsCreationKey":false,"Key":3.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"2e3dbdca-0535-4703-beee-9eca20680453","path":"sprites/spr_jogador_mirmilo_andando_cima/spr_jogador_mirmilo_andando_cima.yy",},},},"Disabled":false,"id":"b4a13e12-49d1-4cb7-ba01-f19922d4f721","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"e1dd3e25-d76a-4129-a010-2eb1f3527e6b","path":"sprites/spr_jogador_mirmilo_andando_cima/spr_jogador_mirmilo_andando_cima.yy",},},},"Disabled":false,"id":"c39b0b3c-c188-4297-b5b2-4fd1135490b2","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"92b46b9a-a803-4ab3-b19f-8ac06453216d","path":"sprites/spr_jogador_mirmilo_andando_cima/spr_jogador_mirmilo_andando_cima.yy",},},},"Disabled":false,"id":"bc85c131-6955-42f6-aec9-4dfdda583679","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"9ac576a8-bba6-4c40-ba7e-e8c5da733597","path":"sprites/spr_jogador_mirmilo_andando_cima/spr_jogador_mirmilo_andando_cima.yy",},},},"Disabled":false,"id":"bd1fbe71-75bc-451d-b121-ad3babe25b48","IsCreationKey":false,"Key":3.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

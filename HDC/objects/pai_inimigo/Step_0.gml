@@ -16,3 +16,10 @@ if x < global.cmx - _border{
 if x > global.cmx + global.cmw + _border {
 	x = global.cmx - _border;
 }
+
+dir = point_direction(x, y, obj_jogador.x, obj_jogador.y);
+hspd = lengthdir_x(spd, dir);
+vspd = lengthdir_y(spd, dir);
+
+x += hspd;
+y += vspd;

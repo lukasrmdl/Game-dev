@@ -1,7 +1,7 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "spr_player_mirmilo_parado",
+  "name": "spr_jogador_mirmilo_parado",
   "bbox_bottom": 42,
   "bbox_left": 9,
   "bbox_right": 23,
@@ -32,7 +32,7 @@
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "spr_player_mirmilo_parado",
+    "name": "spr_jogador_mirmilo_parado",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"7c9c0aeb-39ec-4ec5-9dca-458ada16ce24","path":"sprites/spr_player_mirmilo_parado/spr_player_mirmilo_parado.yy",},},},"Disabled":false,"id":"b0d42ae9-b5b8-4e2c-ae02-c877649e20ec","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"7c9c0aeb-39ec-4ec5-9dca-458ada16ce24","path":"sprites/spr_jogador_mirmilo_parado/spr_jogador_mirmilo_parado.yy",},},},"Disabled":false,"id":"b0d42ae9-b5b8-4e2c-ae02-c877649e20ec","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
