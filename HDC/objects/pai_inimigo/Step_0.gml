@@ -1,4 +1,5 @@
 /// @description etapas inimigo
+depth = -y;
 var _border = 64;
 
 if y < global.cmy - _border{
@@ -23,3 +24,7 @@ vspd = lengthdir_y(spd, dir);
 
 x += hspd;
 y += vspd;
+
+if hp <= 0 {
+	instance_destroy();
+}

@@ -34,3 +34,23 @@ if up = 1 {
 } else {
 	sprite_index = spr_jogador_mirmilo_parado;
 }
+
+//ataque armas
+
+arma_gladio_cd--;
+
+if arma_gladio_cd <= 0 {
+	var _alcance_min = 10;
+	var _alcance_max = 80;
+	var _enemy = instance_nearest(x, y, pai_inimigo);
+	var _distance = point_distance(x, y, _enemy.x, _enemy.y);
+	if _distance >= _alcance_min and _distance <= _alcance_max {
+		var _inst = instance_create_layer(x, y, "Instances", obj_arma_gladio);
+	
+		_inst.speed = 2;
+		_inst.direction = point_direction(x, y, _enemy.x, _enemy.y);
+		_inst.image_angle = _inst.direction;
+	
+		arma_gladio_cd = arma_gladio_timer;
+	}
+}

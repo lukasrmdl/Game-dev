@@ -9,3 +9,6 @@ hspd = -1;
 vspd = -1;
 spd = 1;
 dir = -1;
+
+arma_gladio_timer = 60;
+arma_gladio_cd = arma_gladio_timer;
