@@ -17,3 +17,12 @@ if alarm[0] <= 0 {
 	
 	alarm[0] = spawn_timer;
 }
+
+//subir de nivel
+
+if global.exp >= global.exp_max {
+	global.level++;
+	global.exp = global.exp - global.exp_max;
+	global.level_up = true;
+	global.exp_max += 10;
+}

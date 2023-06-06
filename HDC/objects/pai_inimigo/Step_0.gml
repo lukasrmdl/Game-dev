@@ -26,5 +26,10 @@ x += hspd;
 y += vspd;
 
 if hp <= 0 {
+	repeat(3) {
+		var _xx = irandom_range(-10, 10);
+		var _yy = irandom_range(-10, 10);
+		instance_create_layer(x + _xx, y + _yy, "Instances", obj_exp);
+	}
 	instance_destroy();
 }

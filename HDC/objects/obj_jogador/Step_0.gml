@@ -20,19 +20,32 @@ if _xx != 0 or _yy != 0 {
 	x += hspd;
 	y += vspd;
 if right = 1 {
+	if !audio_is_playing(snd_jogador_andando) {
+		audio_play_sound(snd_jogador_andando, 1, true);
+	}
 	sprite_index = spr_jogador_mirmilo_andando_lateral_dir;
 }
 if left = 1 {
+	if !audio_is_playing(snd_jogador_andando) {
+		audio_play_sound(snd_jogador_andando, 1, true);
+	}
 	sprite_index = spr_jogador_mirmilo_andando_lateral_esq;
 }
 if down = 1 {
+	if !audio_is_playing(snd_jogador_andando) {
+		audio_play_sound(snd_jogador_andando, 1, true);
+	}
 	sprite_index = spr_jogador_mirmilo_andando_baixo;
 }
 if up = 1 {
+	if !audio_is_playing(snd_jogador_andando) {
+		audio_play_sound(snd_jogador_andando, 1, true);
+	}
 	sprite_index = spr_jogador_mirmilo_andando_cima;
 }
 } else {
 	sprite_index = spr_jogador_mirmilo_parado;
+	audio_stop_sound(snd_jogador_andando);
 }
 
 //ataque armas
@@ -46,6 +59,7 @@ if arma_gladio_cd <= 0 {
 	var _distance = point_distance(x, y, _enemy.x, _enemy.y);
 	if _distance >= _alcance_min and _distance <= _alcance_max {
 		var _inst = instance_create_layer(x, y, "Instances", obj_arma_gladio);
+		audio_play_sound(snd_arma_gladio_ataque, 1, false);
 	
 		_inst.speed = 2;
 		_inst.direction = point_direction(x, y, _enemy.x, _enemy.y);
