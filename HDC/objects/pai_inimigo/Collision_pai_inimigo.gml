@@ -1,4 +1,9 @@
 /// @description colisão com outros inimigos
+
+if global.level_up = true{
+	exit;
+}
+
 var _push  = 1;
 
 var _dir = point_direction(other.x, other.y, x, y);

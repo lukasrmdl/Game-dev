@@ -1,5 +1,12 @@
 /// @description Etapas do jogador
 
+if global.level_up = true{
+	image_speed = 0;
+	exit;
+} else {
+	image_speed = 1;
+}
+
 //teclas
 right = keyboard_check(ord("D")) or keyboard_check(vk_right);
 up = keyboard_check(ord("W")) or keyboard_check(vk_up);
@@ -53,8 +60,8 @@ if up = 1 {
 arma_gladio_cd--;
 
 if arma_gladio_cd <= 0 {
-	var _alcance_min = 10;
-	var _alcance_max = 80;
+	var _alcance_min = 5;
+	var _alcance_max = 60;
 	var _enemy = instance_nearest(x, y, pai_inimigo);
 	var _distance = point_distance(x, y, _enemy.x, _enemy.y);
 	if _distance >= _alcance_min and _distance <= _alcance_max {

@@ -1,4 +1,9 @@
 /// @description etapas inimigo
+
+if global.level_up = true{
+	exit;
+}
+
 depth = -y;
 var _border = 64;
 

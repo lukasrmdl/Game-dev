@@ -1,4 +1,10 @@
 /// @description etapas controle
+
+if global.level_up = true{
+	alarm[0]++;
+	exit;
+}
+
 var _side = irandom(1);
 
 if alarm[0] <= 0 {
