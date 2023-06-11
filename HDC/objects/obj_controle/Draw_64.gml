@@ -14,17 +14,27 @@ if global.level_up == true {
 	draw_set_alpha(1);
 
 	for (var i = 0; i < upgrade_num; i++){
+		var _y = upgrade_list[| i];
+		var _name = upgrades_grid[# Upgrades.Name, _y ];
 		var _spry = _yy + (_sprh + _buffer) * i;
 
 		if point_in_rectangle(_mx, _my, _xx - _sprw/2, _spry - _sprh/2, _xx + _sprw/2, _spry + _sprh/2){
 			upgrade_alpha = 1;
 			upgrade_scale = 1.1;
+			upgrades_x = _xx + 15 - _sprw/2;
+			draw_set_font(fnt_alkhemikal_medium);
 		}else{
+			draw_set_font(fnt_alkhemikal_small);
 			upgrade_alpha = .7;
 			upgrade_scale = 1;
+			upgrades_x = _xx + 20 - _sprw/2;
 		}
 		
 		draw_sprite_ext(spr_level_up_hud, -1, _xx, _spry, upgrade_scale, upgrade_scale, 0, c_white, upgrade_alpha);
+		draw_sprite(spr_upgrades, _y, upgrades_x, _spry + 1);
+		draw_set_halign(fa_center);
+		draw_set_valign(fa_middle);
+		draw_text(_xx, _spry, _name);
 		audio_stop_sound(snd_ambience_1);
 		audio_stop_sound(snd_crowd);
 		audio_stop_sound(snd_jogador_andando);

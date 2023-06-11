@@ -4,7 +4,7 @@ if global.level_up = true{
 	exit;
 }
 
-alpha -= alpha_step;
+alpha -= 0.5;
 
 if alpha <= 0 {
 	instance_destroy();

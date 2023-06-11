@@ -1,22 +1,33 @@
-/// @description etapas gladio
+/// @description Etapas gladio
 
-if global.level_up = true{
+if global.level_up = true {
 	alarm[0]++;
 	speed = 0;
 	exit;
 } else {
 	speed = 2;
 }
+	var _sword_speed = 2;
+var _player = instance_nearest(x, y, obj_jogador);
+var _sword_comeback = false; // Variável que indica se a espada deve retornar ao jogador
 
 if alarm[0] <= 0 {
-	var _enemy = instance_nearest(x, y, pai_inimigo);
-	var _inst = instance_create_layer(x, y, "Instances", obj_arma_gladio_vfx);
-	_inst.speed = 0.6;
-	_inst.direction = point_direction(x, y, _enemy.x, _enemy.y);
-	_inst.image_angle = _inst.direction;
-	_inst.depth = depth + 1; 
-	_inst.alpha = 1; // Definir o valor inicial de alpha
-	_inst.alpha_step = 0.7; // Valor do decremento de alpha a cada etapa
-	alarm[0] = 3;
+	if _sword_comeback {
+		var _sword_direction = point_direction(x, y, _player.x, _player.y);
+		var _sword_hspd = lengthdir_x(_sword_speed, _sword_direction);
+		var _sword_vspd = lengthdir_y(_sword_speed, _sword_direction);
+		x -= _sword_hspd; 
+		y -= _sword_vspd;
+		
+		if point_distance(x, y, _player.x, _player.y) <= _sword_distance {
+			_sword_comeback = false; 
+		}
+	} else {
+		if !_sword_traveling {
+			_sword_traveling = true;
+			_sword_distance = 0;
+			audio_play_sound(snd_arma_gladio_ataque, 1, false);
+		}
+		alarm[0] = 3;
+	}
 }
-	

@@ -29,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_inimigo_teste",
-    "path": "sprites/spr_inimigo_teste/spr_inimigo_teste.yy",
+    "name": "spr_inimigo_1_andando",
+    "path": "sprites/spr_inimigo_1_andando/spr_inimigo_1_andando.yy",
   },
   "spriteMaskId": null,
   "visible": true,
