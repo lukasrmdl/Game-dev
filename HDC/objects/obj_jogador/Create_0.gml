@@ -9,6 +9,10 @@ hspd = -1;
 vspd = -1;
 spd = 1;
 dir = -1;
+alfa_add = 0;
+
+vida = 100;
+armadura = 0;
 
 collect_range = 32;
 
@@ -16,3 +20,6 @@ depth = +1;
 
 arma_gladio_timer = 60;
 arma_gladio_cd = arma_gladio_timer;
+
+arma_pillum_timer = 80;
+arma_pillum_cd = arma_pillum_timer;

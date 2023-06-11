@@ -10,8 +10,8 @@
     "path": "folders/Objetos.yy",
   },
   "parentObjectId": {
-    "name": "pai_inimigo",
-    "path": "objects/pai_inimigo/pai_inimigo.yy",
+    "name": "pai_inimigos_basicos",
+    "path": "objects/pai_inimigos_basicos/pai_inimigos_basicos.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,

@@ -1,6 +1,6 @@
 /// @description Desenhos de hud
-
-if global.level_up == true {	
+if room = rm_arena_Capua {
+	if global.level_up == true {	
 	var _sprw = sprite_get_width(spr_level_up_hud);
 	var _sprh = sprite_get_height(spr_level_up_hud);
 	var _buffer = 6;
@@ -19,6 +19,11 @@ if global.level_up == true {
 		var _spry = _yy + (_sprh + _buffer) * i;
 
 		if point_in_rectangle(_mx, _my, _xx - _sprw/2, _spry - _sprh/2, _xx + _sprw/2, _spry + _sprh/2){
+			if mouse_check_button_pressed(mb_left) {
+					upgrade_selecionado = upgrades_grid[# Upgrades.Name, _y];
+					ativarUpgradeNoJogador(upgrade_selecionado);
+					global.level_up = false;
+			}
 			upgrade_alpha = 1;
 			upgrade_scale = 1.1;
 			upgrades_x = _xx + 15 - _sprw/2;
@@ -47,8 +52,26 @@ if global.level_up == true {
 	if !audio_is_playing(snd_ambience_1) {
 		audio_play_sound(snd_ambience_1, 1, true);
 	}
-	
+	var _c = make_color_rgb(13, 33, 79);
+	draw_set_font(fnt_alkhemikal_medium);
+	draw_sprite(spr_nome_rael, -1, display_get_gui_width()/2 - 255, 3);
+	draw_text_color(display_get_gui_width()/2 + 180, 18, "Nível: " + string(global.nivel), _c, _c, _c, _c, 1);
 	draw_sprite(spr_exp_hud, -1, display_get_gui_width()/2, 2);
 	draw_sprite_ext(spr_exp_bar, -1, display_get_gui_width()/2, 3, global.exp/global.exp_max, 1, 0, c_white, 1);
 	draw_sprite_ext(spr_arma_hud_gladio, 0, 5, 222, 1, 1, 0, make_color_rgb(255, 255, 255), 1);
+	if (global.wasPillum == 1) {
+		draw_sprite_ext(spr_arma_hud_pillum, 0, 27, 221, 1.2, 1.2, 0, make_color_rgb(255, 255, 255), 1);
+	}
 }
+} else if room = rm_game_over {
+	var _largura = display_get_gui_width();
+	var _altura = display_get_gui_height();
+	var _c = make_color_rgb(13, 33, 79);
+	draw_set_halign(fa_center);
+	draw_set_valign(fa_middle);
+	draw_text_ext_color(_largura/2, _altura/2, "Fim de jogo! O seu gladiador morreu, Se quiser tentar novamente, aperte 'R'", 70, 500, _c, _c, _c, _c, 1);
+	if keyboard_check_pressed(ord("R")) {
+	game_restart();
+	}
+}
+

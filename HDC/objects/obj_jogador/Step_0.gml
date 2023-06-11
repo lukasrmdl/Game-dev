@@ -64,6 +64,18 @@ if up = 1 {
 	audio_stop_sound(snd_jogador_andando);
 }
 
+if alarm[0] > 0 {
+	if image_alpha <= 0 {
+		alfa_add = 0.05;
+	} else if image_alpha >= 1 {
+		 alfa_add = -0.05;
+	}
+	
+	image_alpha += alfa_add;
+} else {
+	image_alpha = 1;
+}
+
 // Posiciona a espada ao lado do jogador
 var _sword_x = x + _sword_offset_x;
 var _sword_y = y + _sword_offset_y;
@@ -82,14 +94,41 @@ if _sword_attacking {
     _sword_y += lengthdir_y(_sword_attack_distance, _sword_angle) * _sword_attack_speed;
 }
 
+if vida <= 0 {
+	room_goto(rm_game_over);
+}
+
 //ataque armas
+
+if global.wasPillum == true {
+	arma_pillum_cd--;
+
+	if arma_pillum_cd <= 0 {
+		var _alcance_min = 30;
+		var _alcance_max = 140;
+		var _enemy = instance_nearest(x, y, pai_inimigos_basicos);
+		var _distance = point_distance(x, y, _enemy.x, _enemy.y);
+		if _distance >= _alcance_min and _distance <= _alcance_max {
+			var _inst = instance_create_layer(x, y, "Instances", obj_arma_pillum);
+			_inst.speed = 2.5;
+			_inst.direction = point_direction(x, y, _enemy.x, _enemy.y);
+			_inst.image_angle = _inst.direction;
+			_enemy_target = _enemy;
+			_sword_attacking = true;
+			
+			audio_play_sound(snd_spear_fly, 1, false);
+	
+			arma_pillum_cd = arma_pillum_timer;
+		}
+	}
+}
 
 arma_gladio_cd--;
 
 if arma_gladio_cd <= 0 {
 	var _alcance_min = 5;
 	var _alcance_max = 60;
-	var _enemy = instance_nearest(x, y, pai_inimigo);
+	var _enemy = instance_nearest(x, y, pai_inimigos_basicos);
 	var _distance = point_distance(x, y, _enemy.x, _enemy.y);
 	if _distance >= _alcance_min and _distance <= _alcance_max {
 		var _inst = instance_create_layer(x, y, "Instances", obj_arma_gladio);
@@ -104,6 +143,11 @@ if arma_gladio_cd <= 0 {
 	
 		arma_gladio_cd = arma_gladio_timer;
 	}
+}
+
+if global.wasPena = 1 {
+	spd += 1;
+	global.wasPena = 0;
 }
 
 if _sword_traveling {
