@@ -34,7 +34,13 @@ if room = rm_arena_Capua {
 
 	x += hspd;
 	y += vspd;
-
+	
+	if vida <= 18 {
+	sprite_index = spr_inimigo_1_andando_hurt;
+	}
+	if vida <= 10 {
+	sprite_index = spr_inimigo_1_andando_dying;
+	}
 	if vida <= 0 {
 		audio_play_sound(snd_inimigo_atingido, 1, false);
 		repeat(3) {

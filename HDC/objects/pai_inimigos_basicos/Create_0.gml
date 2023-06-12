@@ -8,3 +8,4 @@ spd = .35;
 
 vida = 25;
 armadura = 5;
+jaAtingido = false;

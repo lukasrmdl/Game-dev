@@ -10,6 +10,5 @@ if alarm[0] <= 0{
 		audio_play_sound(snd_colisao_inimigos, 1, false);
 		audio_play_sound(snd_jogador_atingido, 1, false);
 	}
-
 	alarm[0] = 180;
 }

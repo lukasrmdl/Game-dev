@@ -5,7 +5,7 @@ if global.level_up = true {
 	speed = 0;
 	exit;
 } else {
-	speed = 2;
+	speed = 2.2;
 }
 	var _sword_speed = 2;
 var _player = instance_nearest(x, y, obj_jogador);
@@ -29,4 +29,15 @@ if alarm[0] <= 0 {
 		}
 		alarm[0] = 3;
 	}
+}
+
+// Obtém as coordenadas da câmera
+var camX = camera_get_view_x(view_camera[0]);
+var camY = camera_get_view_y(view_camera[0]);
+var camWidth = camera_get_view_width(view_camera[0]);
+var camHeight = camera_get_view_height(view_camera[0]);
+
+// Verifica se o objeto saiu da câmera
+if (x < camX || x > camX + camWidth || y < camY || y > camY + camHeight) {
+    instance_destroy();
 }

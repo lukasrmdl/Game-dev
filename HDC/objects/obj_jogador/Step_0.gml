@@ -110,11 +110,10 @@ if global.wasPillum == true {
 		var _distance = point_distance(x, y, _enemy.x, _enemy.y);
 		if _distance >= _alcance_min and _distance <= _alcance_max {
 			var _inst = instance_create_layer(x, y, "Instances", obj_arma_pillum);
-			_inst.speed = 2.5;
+			_inst.speed = 2;
 			_inst.direction = point_direction(x, y, _enemy.x, _enemy.y);
 			_inst.image_angle = _inst.direction;
 			_enemy_target = _enemy;
-			_sword_attacking = true;
 			
 			audio_play_sound(snd_spear_fly, 1, false);
 	

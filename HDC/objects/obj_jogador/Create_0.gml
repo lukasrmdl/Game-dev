@@ -21,5 +21,5 @@ depth = +1;
 arma_gladio_timer = 60;
 arma_gladio_cd = arma_gladio_timer;
 
-arma_pillum_timer = 80;
+arma_pillum_timer = 90;
 arma_pillum_cd = arma_pillum_timer;
