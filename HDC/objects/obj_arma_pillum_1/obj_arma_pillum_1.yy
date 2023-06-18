@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_arma_pillum",
+  "name": "obj_arma_pillum_1",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_upgrade_pillum",
-    "path": "sprites/spr_upgrade_pillum/spr_upgrade_pillum.yy",
+    "name": "spr_upgrade_pillum_1",
+    "path": "sprites/spr_upgrade_pillum_1/spr_upgrade_pillum_1.yy",
   },
   "spriteMaskId": null,
   "visible": true,

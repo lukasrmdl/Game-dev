@@ -1,19 +1,22 @@
 /// @description Variavéis de criação
-
 right = -1;
 up = -1;
 left = -1;
 down = -1;
-
 hspd = -1;
 vspd = -1;
-spd = 1;
+global.max_speed = false;
+global.player_spd = 1;
+
+if global.player_spd >= 2 {
+	global.player_spd = 2;
+	global.max_speed = true;
+}
 dir = -1;
 alfa_add = 0;
 
 vida = 100;
 armadura = 0;
-
 collect_range = 32;
 
 depth = +1;

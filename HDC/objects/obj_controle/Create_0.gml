@@ -2,7 +2,6 @@
 randomize();
 
 global.wasIma = 0;
-global.wasPena = 0;
 global.wasPillum = 0;
 global.level = 1;
 global.exp = 0;
@@ -12,7 +11,6 @@ global.level_up = false;
 global.nivel = 1;
 tempoDeJogo = 0;
 tempoDeJogo += delta_time;
-
 
 spawn_timer = 1.5 * room_speed;
 
@@ -35,7 +33,7 @@ enum Upgrades{
 
 upgrades_grid = ds_grid_create(3, 0);
 ds_grid_add_upgrade("Pillum", -1, -1); // pillum +1
-ds_grid_add_upgrade("Pena", -1, -1); // velocidade +1
+if global.max_speed != 2 { ds_grid_add_upgrade("Pena", -1, -1);} // velocidade +1
 ds_grid_add_upgrade("Imã", -1, -1);  // distancia de coleta +1
 //ds_grid_add_upgrade("Estrela", -1, -1); // +1 ?
 //ds_grid_add_upgrade("Shuriken", -1, -1); // +1 arma arremessavel

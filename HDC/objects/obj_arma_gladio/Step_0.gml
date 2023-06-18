@@ -7,7 +7,7 @@ if global.level_up = true {
 } else {
 	speed = 2;
 }
-	var _sword_speed = 2;
+var _sword_speed = 2;
 var _player = instance_nearest(x, y, obj_jogador);
 var _sword_comeback = false; // Variável que indica se a espada deve retornar ao jogador
 

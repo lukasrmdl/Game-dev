@@ -29,8 +29,8 @@ var _yy = down - up;
 //modifica a direção para a direção calculada pela movimentação X e Y
 if _xx != 0 or _yy != 0 {
 	dir = point_direction(x, y, x + _xx, y + _yy);
-	hspd = lengthdir_x(spd, dir);
-	vspd = lengthdir_y(spd, dir);
+	hspd = lengthdir_x(global.player_spd, dir);
+	vspd = lengthdir_y(global.player_spd, dir);
 
 	//movimento
 	x += hspd;
@@ -100,7 +100,57 @@ if vida <= 0 {
 
 //ataque armas
 
-if global.wasPillum == true {
+//pillum 1
+
+if (global.wasPillum == 1) {
+	arma_pillum_cd--;
+
+	if arma_pillum_cd <= 0 {
+		var _alcance_min = 30;
+		var _alcance_max = 120;
+		var _enemy = instance_nearest(x, y, pai_inimigos_basicos);
+		var _distance = point_distance(x, y, _enemy.x, _enemy.y);
+		if _distance >= _alcance_min and _distance <= _alcance_max {
+			var _inst = instance_create_layer(x, y, "Instances", obj_arma_pillum_1);
+			_inst.speed = 2;
+			_inst.direction = point_direction(x, y, _enemy.x, _enemy.y);
+			_inst.image_angle = _inst.direction;
+			_enemy_target = _enemy;
+			
+			audio_play_sound(snd_spear_fly, 1, false);
+	
+			arma_pillum_cd = arma_pillum_timer;
+		}
+	}
+}
+
+//pillum 2
+
+if (global.wasPillum == 2) {
+	arma_pillum_cd--;
+
+	if arma_pillum_cd <= 0 {
+		var _alcance_min = 30;
+		var _alcance_max = 130;
+		var _enemy = instance_nearest(x, y, pai_inimigos_basicos);
+		var _distance = point_distance(x, y, _enemy.x, _enemy.y);
+		if _distance >= _alcance_min and _distance <= _alcance_max {
+			var _inst = instance_create_layer(x, y, "Instances", obj_arma_pillum_1);
+			_inst.speed = 2.2;
+			_inst.direction = point_direction(x, y, _enemy.x, _enemy.y);
+			_inst.image_angle = _inst.direction;
+			_enemy_target = _enemy;
+			
+			audio_play_sound(snd_spear_fly, 1, false);
+	
+			arma_pillum_cd = arma_pillum_timer;
+		}
+	}
+}
+
+//pillum 3
+
+if (global.wasPillum == 3) {
 	arma_pillum_cd--;
 
 	if arma_pillum_cd <= 0 {
@@ -109,8 +159,8 @@ if global.wasPillum == true {
 		var _enemy = instance_nearest(x, y, pai_inimigos_basicos);
 		var _distance = point_distance(x, y, _enemy.x, _enemy.y);
 		if _distance >= _alcance_min and _distance <= _alcance_max {
-			var _inst = instance_create_layer(x, y, "Instances", obj_arma_pillum);
-			_inst.speed = 2;
+			var _inst = instance_create_layer(x, y, "Instances", obj_arma_pillum_1);
+			_inst.speed = 2.3;
 			_inst.direction = point_direction(x, y, _enemy.x, _enemy.y);
 			_inst.image_angle = _inst.direction;
 			_enemy_target = _enemy;
@@ -142,11 +192,6 @@ if arma_gladio_cd <= 0 {
 	
 		arma_gladio_cd = arma_gladio_timer;
 	}
-}
-
-if global.wasPena = 1 {
-	spd += 1;
-	global.wasPena = 0;
 }
 
 if _sword_traveling {

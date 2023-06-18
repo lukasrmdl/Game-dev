@@ -51,6 +51,9 @@ if room = rm_arena_Capua {
 		repeat(8){
 			instance_create_layer(x, y, "Instances", obj_sangue_inimigo);
 		}
+		repeat(8){
+			instance_create_layer(x, y, "Instances", obj_sangue_inimigo);
+		}
 		instance_destroy();
 	}
 }
