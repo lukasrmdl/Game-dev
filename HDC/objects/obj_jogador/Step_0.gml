@@ -98,6 +98,10 @@ if vida <= 0 {
 	room_goto(rm_game_over);
 }
 
+if global.wasIma == 1 {
+	collect_range += 15;
+}
+
 //ataque armas
 
 //pillum 1

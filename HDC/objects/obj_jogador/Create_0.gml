@@ -7,6 +7,8 @@ hspd = -1;
 vspd = -1;
 global.max_speed = false;
 global.player_spd = 1;
+image_xscale = .9;
+image_yscale = .9;
 
 if global.player_spd >= 2 {
 	global.player_spd = 2;

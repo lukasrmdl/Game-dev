@@ -19,5 +19,5 @@
   "sampleRate": 44100,
   "soundFile": "snd_level_up.wav",
   "type": 0,
-  "volume": 0.3,
+  "volume": 0.2,
 }

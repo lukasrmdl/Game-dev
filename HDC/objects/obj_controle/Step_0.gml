@@ -3,8 +3,8 @@ if room = rm_arena_Capua {
 	if global.level_up {
 	    alarm[0]++;
 	    exit;
-	}
-
+	} else {
+	
 	var _side = irandom(1);
 
 	if alarm[0] <= 0 {
@@ -21,7 +21,8 @@ if room = rm_arena_Capua {
     
 	    alarm[0] = spawn_timer;
 	}
-
+	}
+	
 	// Subir de nível
 	if global.exp >= global.exp_max {
 		audio_play_sound(snd_level_up, 1, false);
