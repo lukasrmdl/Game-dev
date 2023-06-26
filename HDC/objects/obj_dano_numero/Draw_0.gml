@@ -20,4 +20,3 @@ if crit = true {
 	draw_set_font(previous_font);
 	draw_set_alpha(previous_alpha);
 }
-

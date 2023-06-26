@@ -13,3 +13,12 @@ function ds_grid_add_upgrade(_name, _script, _frequency){
 	_grid[# 1, _y] = _script;
 	_grid[# 2, _y] = _frequency;
 }
+
+function ds_remove_add_upgrade(_name, _script, _frequency){
+	var _grid = upgrades_grid;
+	var _y = ds_grid_destroy(_grid);
+ 
+	_grid[# 0, _y] = _name;
+	_grid[# 1, _y] = _script;
+	_grid[# 2, _y] = _frequency;
+}

@@ -17,9 +17,14 @@ if global.player_spd >= 2 {
 dir = -1;
 alfa_add = 0;
 
-vida = 100;
+global.vida_jogador = 100;
+global.vida_jogador_max = 100;
 armadura = 0;
-collect_range = 32;
+global.collect_range = 32;
+
+if global.collect_range >= 92 {
+	global.collect_range = 92;
+}
 
 depth = +1;
 

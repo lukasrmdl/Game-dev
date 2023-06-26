@@ -59,10 +59,15 @@ if room = rm_arena_Capua {
 	var _c = make_color_rgb(13, 33, 79);
 	
 	draw_sprite(spr_exp_hud, -1, display_get_gui_width()/2, 6);
+	draw_sprite(spr_vida_hud, -1, display_get_gui_width()/2, 245);
 	
 	draw_sprite_ext(spr_exp_bar, -1, display_get_gui_width()/2, 7, global.exp/global.exp_max, 1, 0, c_white, 1);
+	draw_sprite_ext(spr_vida_bar, -1, display_get_gui_width()/2, 246, global.vida_jogador/global.vida_jogador_max, 1, 0, c_white, 1);
 }
 } else if room = rm_game_over {
+	draw_set_halign(fa_left);
+	draw_set_valign(fa_top);
+	draw_set_font(fnt_alkhemikal_medium);
 	var _largura = display_get_gui_width();
 	var _altura = display_get_gui_height();
 	var _c = make_color_rgb(13, 33, 79);

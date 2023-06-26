@@ -1,6 +1,22 @@
 /// @description etapas inimigo
 
 if room = rm_arena_Capua {
+	
+	if bleeding = true {
+	alarm[0] = 180;
+}
+
+if alarm[0] > 0 {
+	if image_alpha <= 0 {
+		alfa_add = 0.08;
+	} else if image_alpha >= 1 {
+		 alfa_add = -0.08;
+	}
+	image_alpha += alfa_add;
+	vida -= 1;
+} else {
+	image_alpha = 1;
+}
 
 	if global.level_up = true{
 		image_speed = 0;

@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_upgrade_pillum_1",
-    "path": "sprites/spr_upgrade_pillum_1/spr_upgrade_pillum_1.yy",
+    "name": "spr_upgrade_pillum_3",
+    "path": "sprites/spr_upgrade_pillum_3/spr_upgrade_pillum_3.yy",
   },
   "spriteMaskId": null,
   "visible": true,

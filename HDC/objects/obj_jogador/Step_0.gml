@@ -94,12 +94,13 @@ if _sword_attacking {
     _sword_y += lengthdir_y(_sword_attack_distance, _sword_angle) * _sword_attack_speed;
 }
 
-if vida <= 0 {
+if global.vida_jogador <= 0 {
 	room_goto(rm_game_over);
 }
 
 if global.wasIma == 1 {
-	collect_range += 15;
+	global.collect_range += 15;
+	global.wasIma = 1;
 }
 
 //ataque armas
@@ -139,7 +140,7 @@ if (global.wasPillum == 2) {
 		var _enemy = instance_nearest(x, y, pai_inimigos_basicos);
 		var _distance = point_distance(x, y, _enemy.x, _enemy.y);
 		if _distance >= _alcance_min and _distance <= _alcance_max {
-			var _inst = instance_create_layer(x, y, "Instances", obj_arma_pillum_1);
+			var _inst = instance_create_layer(x, y, "Instances", obj_arma_pillum_2);
 			_inst.speed = 2.2;
 			_inst.direction = point_direction(x, y, _enemy.x, _enemy.y);
 			_inst.image_angle = _inst.direction;
@@ -154,7 +155,7 @@ if (global.wasPillum == 2) {
 
 //pillum 3
 
-if (global.wasPillum == 3) {
+if (global.wasPillum >= 3) {
 	arma_pillum_cd--;
 
 	if arma_pillum_cd <= 0 {
@@ -163,7 +164,7 @@ if (global.wasPillum == 3) {
 		var _enemy = instance_nearest(x, y, pai_inimigos_basicos);
 		var _distance = point_distance(x, y, _enemy.x, _enemy.y);
 		if _distance >= _alcance_min and _distance <= _alcance_max {
-			var _inst = instance_create_layer(x, y, "Instances", obj_arma_pillum_1);
+			var _inst = instance_create_layer(x, y, "Instances", obj_arma_pillum_3);
 			_inst.speed = 2.3;
 			_inst.direction = point_direction(x, y, _enemy.x, _enemy.y);
 			_inst.image_angle = _inst.direction;
@@ -176,25 +177,79 @@ if (global.wasPillum == 3) {
 	}
 }
 
+
 arma_gladio_cd--;
 
-if arma_gladio_cd <= 0 {
-	var _alcance_min = 5;
-	var _alcance_max = 60;
-	var _enemy = instance_nearest(x, y, pai_inimigos_basicos);
-	var _distance = point_distance(x, y, _enemy.x, _enemy.y);
-	if _distance >= _alcance_min and _distance <= _alcance_max {
-		var _inst = instance_create_layer(x, y, "Instances", obj_arma_gladio);
-		_inst.speed = 2;
-		_inst.direction = point_direction(x, y, _enemy.x, _enemy.y);
-		_inst.image_angle = _inst.direction;
+//gladio nivel 1
 
-		_sword_attacking = true;
-		_enemy_target = _enemy;
+if global.wasGladio == 1 {
+	if arma_gladio_cd <= 0 {
+		var _alcance_min = 5;
+		var _alcance_max = 60;
+		var _enemy = instance_nearest(x, y, pai_inimigos_basicos);
+		var _distance = point_distance(x, y, _enemy.x, _enemy.y);
+		if _distance >= _alcance_min and _distance <= _alcance_max {
+			var _inst = instance_create_layer(x, y, "Instances", obj_arma_gladio);
+			_inst.speed = 2;
+			_inst.direction = point_direction(x, y, _enemy.x, _enemy.y);
+			_inst.image_angle = _inst.direction;
 
-		audio_play_sound(snd_arma_gladio_ataque, 1, false);
+			_sword_attacking = true;
+			_enemy_target = _enemy;
+
+			audio_play_sound(snd_arma_gladio_ataque, 1, false);
 	
-		arma_gladio_cd = arma_gladio_timer;
+			arma_gladio_cd = arma_gladio_timer;
+		}
+	}
+}
+
+// gladio nivel 2
+
+if global.wasGladio == 2 {
+	if arma_gladio_cd <= 0 {
+		var _alcance_min = 5;
+		var _alcance_max = 60;
+		var _enemy = instance_nearest(x, y, pai_inimigos_basicos);
+		var _distance = point_distance(x, y, _enemy.x, _enemy.y);
+		if _distance >= _alcance_min and _distance <= _alcance_max {
+			var _inst = instance_create_layer(x, y, "Instances", obj_arma_gladio_2);
+			_inst.speed = 2.3;
+			_inst.direction = point_direction(x, y, _enemy.x, _enemy.y);
+			_inst.image_angle = _inst.direction;
+
+			_sword_attacking = true;
+			_enemy_target = _enemy;
+
+			audio_play_sound(snd_arma_gladio_ataque, 1, false);
+	
+			arma_gladio_cd = arma_gladio_timer;
+		}
+	}
+}
+
+// gladio nivel 3
+
+
+if global.wasGladio >= 3 {
+	if arma_gladio_cd <= 0 {
+		var _alcance_min = 5;
+		var _alcance_max = 60;
+		var _enemy = instance_nearest(x, y, pai_inimigos_basicos);
+		var _distance = point_distance(x, y, _enemy.x, _enemy.y);
+		if _distance >= _alcance_min and _distance <= _alcance_max {
+			var _inst = instance_create_layer(x, y, "Instances", obj_arma_gladio_3);
+			_inst.speed = 2.5;
+			_inst.direction = point_direction(x, y, _enemy.x, _enemy.y);
+			_inst.image_angle = _inst.direction;
+
+			_sword_attacking = true;
+			_enemy_target = _enemy;
+
+			audio_play_sound(snd_arma_gladio_ataque, 1, false);
+	
+			arma_gladio_cd = arma_gladio_timer;
+		}
 	}
 }
 

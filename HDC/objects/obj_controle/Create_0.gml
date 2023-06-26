@@ -8,16 +8,18 @@ global.cmh = camera_get_view_height(view_camera[0]);
 global.cmx = obj_jogador.x - global.cmw/2;
 global.cmy = obj_jogador.y - global.cmh/2;
 
+global.wasImaHud = 0;
 global.wasIma = 0;
 global.wasVelocidade = 0;
 global.wasPillum = 0;
-global.level = 1;
+global.onda = 1;
 global.exp = 0;
 global.exp_max = 100;
 global.level_up = false;
 global.nome_jogador = "Rael de Cuxe";
 global.classe_jogador = "Mirmilão";
 global.nivel = 1;
+global.wasGladio = 0;
 
 if (global.classe_jogador == "Mirmilão") {
 	_arma_inicial = "Gladio";
@@ -26,8 +28,8 @@ if (global.classe_jogador == "Mirmilão") {
 
 depth = -1;
 
-tempoDeJogo = 0;
-tempoDeJogo += delta_time;
+global.tempoDeJogo = 30;
+global.mostrarTempo = global.tempoDeJogo;
 
 spawn_timer = 1.5 * room_speed;
 
@@ -49,9 +51,10 @@ enum Upgrades{
 // GRID UPGRADES
 
 upgrades_grid = ds_grid_create(3, 0);
-ds_grid_add_upgrade("Pilo", -1, -1); // pillum +1
+ds_grid_add_upgrade("Pilo", -1, -1);// pillum +1};
 ds_grid_add_upgrade("Velocidade", -1, -1); // velocidade +1
 ds_grid_add_upgrade("Coleta", -1, -1);  // distancia de coleta +1
+ds_grid_add_upgrade("Gladio", -1, -1); // pillum +1
 //ds_grid_add_upgrade("Estrela", -1, -1); // +1 ?
 //ds_grid_add_upgrade("Shuriken", -1, -1); // +1 arma arremessavel
 //ds_grid_add_upgrade("Sapo", -1, -1); // +1 Pet

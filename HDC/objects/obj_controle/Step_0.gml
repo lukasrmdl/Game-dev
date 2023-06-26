@@ -6,6 +6,16 @@ if room = rm_arena_Capua {
 	} else {
 	
 	var _side = irandom(1);
+	
+	if (global.tempoDeJogo > 0 ) {
+	global.tempoDeJogo = global.tempoDeJogo-delta_time/1000000;
+	} else global.tempoDeJogo = 0;
+	global.mostrarTempo = ceil(global.tempoDeJogo);
+
+	if (global.tempoDeJogo == 0) {
+	global.onda += 1;
+	global.tempoDeJogo = 30;
+	}
 
 	if alarm[0] <= 0 {
 	    if _side = 0 {
@@ -26,11 +36,13 @@ if room = rm_arena_Capua {
 	// Subir de nível
 	if global.exp >= global.exp_max {
 		audio_play_sound(snd_level_up, 1, false);
-	    global.level++;
 	    global.nivel++;
 	    global.exp -= global.exp_max;
 	    global.level_up = true;
-	    global.exp_max += 5 * global.nivel; // Balancear
+	    global.exp_max += 20 * global.nivel; // Balancear
+		
+		global.vida_jogador_max += 5 * global.nivel;
+		global.vida_jogador = global.vida_jogador_max;
     
 	    upgrade_list = ds_list_create();
 	    repeat (upgrade_num) {
