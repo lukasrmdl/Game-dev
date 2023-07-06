@@ -12,9 +12,12 @@ if room = rm_arena_Capua {
 	} else global.tempoDeJogo = 0;
 	global.mostrarTempo = ceil(global.tempoDeJogo);
 
-	if (global.tempoDeJogo == 0) {
+	if (global.tempoDeJogo == 0 && global.onda != global.max_onda) {
 	global.onda += 1;
 	global.tempoDeJogo = 30;
+	}
+	if (global.onda == global.max_onda) {
+	global.tempoDeJogo = 120;
 	}
 
 	if alarm[0] <= 0 {
@@ -39,7 +42,7 @@ if room = rm_arena_Capua {
 	    global.nivel++;
 	    global.exp -= global.exp_max;
 	    global.level_up = true;
-	    global.exp_max += 20 * global.nivel; // Balancear
+	    global.exp_max += 50 * (global.nivel + global.onda); // Balancear
 		
 		global.vida_jogador_max += 5 * global.nivel;
 		global.vida_jogador = global.vida_jogador_max;

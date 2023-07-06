@@ -8,11 +8,14 @@ global.cmh = camera_get_view_height(view_camera[0]);
 global.cmx = obj_jogador.x - global.cmw/2;
 global.cmy = obj_jogador.y - global.cmh/2;
 
+global.wasLorica = 0;
+global.wasPlumbata = 0;
 global.wasImaHud = 0;
 global.wasIma = 0;
 global.wasVelocidade = 0;
 global.wasPillum = 0;
 global.onda = 1;
+global.max_onda = 10;
 global.exp = 0;
 global.exp_max = 100;
 global.level_up = false;
@@ -29,9 +32,10 @@ if (global.classe_jogador == "Mirmilão") {
 depth = -1;
 
 global.tempoDeJogo = 30;
+
 global.mostrarTempo = global.tempoDeJogo;
 
-spawn_timer = 1.5 * room_speed;
+spawn_timer = 1.0 * room_speed + global.nivel;
 
 upgrade_num = 3;
 upgrade_alpha = 1;
@@ -52,11 +56,11 @@ enum Upgrades{
 
 upgrades_grid = ds_grid_create(3, 0);
 ds_grid_add_upgrade("Pilo", -1, -1);// pillum +1};
-ds_grid_add_upgrade("Velocidade", -1, -1); // velocidade +1
+ds_grid_add_upgrade("Botas", -1, -1); // velocidade +1
 ds_grid_add_upgrade("Coleta", -1, -1);  // distancia de coleta +1
 ds_grid_add_upgrade("Gladio", -1, -1); // pillum +1
-//ds_grid_add_upgrade("Estrela", -1, -1); // +1 ?
-//ds_grid_add_upgrade("Shuriken", -1, -1); // +1 arma arremessavel
+ds_grid_add_upgrade("Plumbata", -1, -1); // Plumbata +1 
+ds_grid_add_upgrade("Lorica", -1, -1); // +1 armadura
 //ds_grid_add_upgrade("Sapo", -1, -1); // +1 Pet
 //ds_grid_add_upgrade("Bumerangue", -1, -1); // +1 Arma arremessavel
 //ds_grid_add_upgrade("Vida", -1, -1); // +1 vitalidade

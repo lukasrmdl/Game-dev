@@ -15,10 +15,19 @@ function ativarUpgradeNoJogador(upgrade_selecionado) {
            	global.wasIma += 1;
 			global.wasImaHud = 1;
 			break;
-		case "Velocidade" :
-			if global.wasVelocidade <= 0 {array_push(obj_gerenciador_melhorias.inv, global.item_list.Velocidade);};
+		case "Botas" :
+			if global.wasVelocidade <= 0 {array_push(obj_gerenciador_melhorias.inv, global.item_list.Botas);};
 			global.player_spd += 0.25;
 			global.wasVelocidade += 1;
+            break;
+		case "Plumbata" :
+			if global.wasPlumbata <= 0 {array_push(obj_gerenciador_melhorias.inv, global.item_list.Plumbata);};
+			global.wasPlumbata += 1;
+            break;
+		case "Lorica" :
+			if global.wasLorica <= 0 {array_push(obj_gerenciador_melhorias.inv, global.item_list.Lorica);};
+			global.wasLorica += 0.05;
+			global.armadura_jogador += 0.05;
             break;
         
         default:

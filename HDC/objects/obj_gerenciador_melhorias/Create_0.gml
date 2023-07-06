@@ -16,13 +16,13 @@ global.item_list = {
 
 	Gladio : new criar_melhoria(
 		"Gládio",
-		"Confiável e letal, Causa 10 de dano físico, tem uma boa velocidade de ataque e possui 10% de chance de crítico.",
+		"Causa pouco dano físico porém com uma boa velocidade de ataque, possui média de chance de crítico.",
 		spr_hud_melhoria_gladio
 	),
 	
 	Pilo : new criar_melhoria(
 		"Pilo",
-		"A ponta da lança, Causa 5 de dano físico, tem uma média velocidade de ataque e possui 5% de chance de crítico, possui 3 de durabilidade e pode atravessar inimigos enquanto durar.",
+		"Pouco dano físico perfurante, média velocidade de ataque e possui 5% de chance de crítico.",
 		spr_hud_melhoria_pilo
 	),
 	Coleta : new criar_melhoria(
@@ -30,10 +30,20 @@ global.item_list = {
 		"Não deixe nada para trás, Aumenta o alcance de coleta em 15 metros.",
 		spr_hud_melhoria_coleta
 	),
-	Velocidade : new criar_melhoria(
-		"Velocidade",
+	Botas : new criar_melhoria(
+		"Botas",
 		"Eles não conseguem te pegar, Aumenta a velocidade de movimento em 25%.",
 		spr_hud_melhoria_velocidade
+	),
+	Plumbata : new criar_melhoria(
+		"Plumbata",
+		"dano fisico em area e chance de critíco média porém com velocidade de ataque baixa.",
+		spr_hud_melhoria_plumbata
+	),
+	Lorica : new criar_melhoria(
+		"Lorica",
+		"Aumenta a sua armadura em 5% diminuindo o dano de ataques fisicos.",
+		spr_hud_melhoria_lorica
 	),
 	
 }
@@ -41,6 +51,8 @@ global.item_list = {
 //criar o inventario
 
 inv = array_create(0);
+
+selected_upgrade = -1;
 	
 	
 // para desenhar, posição do mouse.

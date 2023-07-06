@@ -100,7 +100,7 @@ if global.vida_jogador <= 0 {
 
 if global.wasIma == 1 {
 	global.collect_range += 15;
-	global.wasIma = 1;
+	global.wasIma = 0;
 }
 
 //ataque armas
@@ -133,6 +133,7 @@ if (global.wasPillum == 1) {
 
 if (global.wasPillum == 2) {
 	arma_pillum_cd--;
+	
 
 	if arma_pillum_cd <= 0 {
 		var _alcance_min = 30;
@@ -142,11 +143,12 @@ if (global.wasPillum == 2) {
 		if _distance >= _alcance_min and _distance <= _alcance_max {
 			var _inst = instance_create_layer(x, y, "Instances", obj_arma_pillum_2);
 			_inst.speed = 2.2;
+			
 			_inst.direction = point_direction(x, y, _enemy.x, _enemy.y);
 			_inst.image_angle = _inst.direction;
 			_enemy_target = _enemy;
 			
-			audio_play_sound(snd_spear_fly, 1, false);
+			audio_play_sound(snd_spear_fly, 1, false)
 	
 			arma_pillum_cd = arma_pillum_timer;
 		}
@@ -265,4 +267,157 @@ if _sword_traveling {
         _sword_traveling = false;
         _enemy_target = noone;
     }
+}
+
+
+// plumbata 1 
+
+
+arma_plumbata_cd--;
+
+if global.wasPlumbata == 1 {
+    if arma_plumbata_cd <= 0 {
+        var _inst;
+
+        // Plumbata acima do jogador
+        _inst = instance_create_layer(x, y, "Instances", obj_arma_plumbata_1);
+        _inst.speed = 2;
+        _inst.direction = 45; // Direção para cima
+        _inst.image_angle = _inst.direction;
+
+        // Plumbata direita inferior
+        _inst = instance_create_layer(x, y, "Instances", obj_arma_plumbata_1);
+        _inst.speed = 2;
+        _inst.direction = 135; // Direção diagonal superior direita
+        _inst.image_angle = _inst.direction;
+
+        // Plumbata esquerda superior
+        _inst = instance_create_layer(x, y, "Instances", obj_arma_plumbata_1);
+        _inst.speed = 2;
+        _inst.direction = 225; // Direção diagonal superior esquerda
+        _inst.image_angle = _inst.direction;
+
+        // Plumbata esquerda inferior
+        _inst = instance_create_layer(x, y, "Instances", obj_arma_plumbata_1);
+        _inst.speed = 2;
+        _inst.direction = 315; // Direção diagonal inferior esquerda
+        _inst.image_angle = _inst.direction;
+
+
+        audio_play_sound(snd_arma_plumbata_ataque, 1, false);
+
+        arma_plumbata_cd = arma_plumbata_timer;
+    }
+}
+
+
+
+// plumbata 2
+
+
+arma_plumbata_cd--;
+
+if global.wasPlumbata == 2 {
+    if arma_plumbata_cd <= 0 {
+        var _inst;
+
+        _inst = instance_create_layer(x, y, "Instances", obj_arma_plumbata_1);
+        _inst.speed = 2;
+        _inst.direction = 45; // Direção para cima
+        _inst.image_angle = _inst.direction;
+
+        _inst = instance_create_layer(x, y, "Instances", obj_arma_plumbata_1);
+        _inst.speed = 2;
+        _inst.direction = 135; // Direção diagonal superior direita
+        _inst.image_angle = _inst.direction;
+
+        _inst = instance_create_layer(x, y, "Instances", obj_arma_plumbata_1);
+        _inst.speed = 2;
+        _inst.direction = 225; // Direção diagonal superior esquerda
+        _inst.image_angle = _inst.direction;
+
+        _inst = instance_create_layer(x, y, "Instances", obj_arma_plumbata_1);
+        _inst.speed = 2;
+        _inst.direction = 315; // Direção diagonal inferior esquerda
+        _inst.image_angle = _inst.direction;
+		
+		_inst = instance_create_layer(x, y, "Instances", obj_arma_plumbata_1);
+        _inst.speed = 2;
+        _inst.direction = 90; // Direção diagonal inferior esquerda
+        _inst.image_angle = _inst.direction;
+		
+		_inst = instance_create_layer(x, y, "Instances", obj_arma_plumbata_1);
+        _inst.speed = 2;
+        _inst.direction = 270; // Direção diagonal inferior esquerda
+        _inst.image_angle = _inst.direction;
+
+
+        audio_play_sound(snd_arma_plumbata_ataque, 1, false);
+
+        arma_plumbata_cd = arma_plumbata_timer;
+    }
+}
+
+// plumbata 3
+
+
+arma_plumbata_cd--;
+
+if global.wasPlumbata >= 3 {
+    if arma_plumbata_cd <= 0 {
+        var _inst;
+
+        _inst = instance_create_layer(x, y, "Instances", obj_arma_plumbata_1);
+        _inst.speed = 2;
+        _inst.direction = 45; 
+        _inst.image_angle = _inst.direction;
+
+        _inst = instance_create_layer(x, y, "Instances", obj_arma_plumbata_1);
+        _inst.speed = 2;
+        _inst.direction = 135; 
+        _inst.image_angle = _inst.direction;
+
+
+        _inst = instance_create_layer(x, y, "Instances", obj_arma_plumbata_1);
+        _inst.speed = 2;
+        _inst.direction = 225; 
+        _inst.image_angle = _inst.direction;
+
+        _inst = instance_create_layer(x, y, "Instances", obj_arma_plumbata_1);
+        _inst.speed = 2;
+        _inst.direction = 315; 
+        _inst.image_angle = _inst.direction;
+		
+				
+		_inst = instance_create_layer(x, y, "Instances", obj_arma_plumbata_1);
+        _inst.speed = 2;
+        _inst.direction = 90;
+        _inst.image_angle = _inst.direction;
+		
+		_inst = instance_create_layer(x, y, "Instances", obj_arma_plumbata_1);
+        _inst.speed = 2;
+        _inst.direction = 270; 
+        _inst.image_angle = _inst.direction;
+		
+		_inst = instance_create_layer(x, y, "Instances", obj_arma_plumbata_1);
+        _inst.speed = 2;
+        _inst.direction = 180;
+        _inst.image_angle = _inst.direction;
+		
+		_inst = instance_create_layer(x, y, "Instances", obj_arma_plumbata_1);
+        _inst.speed = 2;
+        _inst.direction = 0; 
+        _inst.image_angle = _inst.direction;
+
+        audio_play_sound(snd_arma_plumbata_ataque, 1, false);
+
+        arma_plumbata_cd = arma_plumbata_timer;
+    }
+}
+
+// lorica max
+
+if global.wasLorica >= 0.20 {
+	global.wasLorica = 0.20;
+	global.armadura_jogador = 0.20;
 }

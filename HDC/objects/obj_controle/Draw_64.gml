@@ -1,6 +1,6 @@
 /// @description Desenhos de hud
 if room = rm_arena_Capua {
-	if global.level_up == true {	
+	if global.level_up == true {
 	var _sprw = sprite_get_width(spr_level_up_hud);
 	var _sprh = sprite_get_height(spr_level_up_hud);
 	var _buffer = 6;
@@ -8,16 +8,19 @@ if room = rm_arena_Capua {
 	var _yy = display_get_gui_height()/2 - _sprh - _buffer;
 	var _mx = device_mouse_x_to_gui(0);
 	var _my = device_mouse_y_to_gui(0);
+	var _c = make_color_rgb(255, 204, 0);
 	
 	draw_set_alpha(.7);
 	draw_rectangle_color(0, 0, display_get_gui_width(), display_get_gui_height(), c_black, c_black, c_black, c_black, false);
 	draw_set_alpha(1);
+	
 
 	for (var i = 0; i < upgrade_num; i++){
 		var _y = upgrade_list[| i];
 		var _name = upgrades_grid[# Upgrades.Name, _y ];
 		var _spry = _yy + (_sprh + _buffer) * i;
-		draw_set_color(c_white);
+		var _c_hud = make_color_rgb(252, 203, 90);
+		draw_set_color(_c_hud);
 
 		if point_in_rectangle(_mx, _my, _xx - _sprw/2, _spry - _sprh/2, _xx + _sprw/2, _spry + _sprh/2){
 			if mouse_check_button_pressed(mb_left) {
@@ -25,18 +28,23 @@ if room = rm_arena_Capua {
 					upgrade_selecionado = upgrades_grid[# Upgrades.Name, _y];
 					ativarUpgradeNoJogador(upgrade_selecionado);
 			}
+			var _c_hud = make_color_rgb(252, 191, 50);
+			draw_set_color(_c_hud);
 			upgrade_alpha = 1;
 			upgrade_scale = 1.1;
 			upgrades_x = _xx + 15 - _sprw/2;
 			draw_set_font(fnt_alkhemikal_medium);
-		}else{
+		}else{	
+			var _c_hud = make_color_rgb(252, 203, 90);
+			draw_set_color(_c_hud);
 			draw_set_font(fnt_alkhemikal_small);
 			upgrade_alpha = .7;
 			upgrade_scale = 1;
 			upgrades_x = _xx + 20 - _sprw/2;
+			
 		}
 		
-		
+		draw_sprite(spr_texto_melhoria, 1, _xx, _yy - 70);
 		draw_sprite_ext(spr_level_up_hud, -1, _xx, _spry, upgrade_scale, upgrade_scale, 0, c_white, upgrade_alpha);
 		draw_sprite(spr_upgrades, _y, upgrades_x, _spry + 1);
 		draw_set_halign(fa_center);
@@ -48,6 +56,7 @@ if room = rm_arena_Capua {
 	}
 	exit;
 } else {
+	draw_set_alpha(1);
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_top);
 	if !audio_is_playing(snd_crowd) {
@@ -58,11 +67,12 @@ if room = rm_arena_Capua {
 	}
 	var _c = make_color_rgb(13, 33, 79);
 	
-	draw_sprite(spr_exp_hud, -1, display_get_gui_width()/2, 6);
+	draw_sprite(spr_exp_hud, -1, display_get_gui_width()/2, 7);
 	draw_sprite(spr_vida_hud, -1, display_get_gui_width()/2, 245);
 	
-	draw_sprite_ext(spr_exp_bar, -1, display_get_gui_width()/2, 7, global.exp/global.exp_max, 1, 0, c_white, 1);
+	draw_sprite_ext(spr_exp_bar, -1, display_get_gui_width()/2, 8, global.exp/global.exp_max, 1, 0, c_white, 1);
 	draw_sprite_ext(spr_vida_bar, -1, display_get_gui_width()/2, 246, global.vida_jogador/global.vida_jogador_max, 1, 0, c_white, 1);
+
 }
 } else if room = rm_game_over {
 	draw_set_halign(fa_left);

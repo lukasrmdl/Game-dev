@@ -3,17 +3,14 @@
 hspd = -1;
 vspd = -1;
 dir = -1;
-bleeding = false;
 
-spd = global.player_spd * .35 * global.onda;
-spd_max = global.player_spd * 0.75
+spd = global.initial_speed * 0.75;
+vida = global.vida_jogador_max * 0.25 + global.onda * 3;
 
-if spd > spd_max {
-    spd = spd_max
-}
-
-
-vida = 25 + global.nivel + global.onda;
+global.vida_inimigo = vida;
 armadura = 5;
 jaAtingido = false;
 alfa_add = 0;
+
+image_xscale = 1.1;
+image_yscale = 1.1;

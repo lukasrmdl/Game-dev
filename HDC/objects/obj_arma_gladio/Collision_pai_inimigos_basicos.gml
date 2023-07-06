@@ -21,5 +21,14 @@ var damage = _dano_no_inimigo; // Defina o valor do dano aqui (substitua pelo va
 var obj = instance_create_layer(other.x - 15, other.y - 18, "Instances", obj_dano_numero); // Cria o objeto "obj_DamageNumber"
 obj.damage_num = damage; // Define o valor do dano no objeto criado
 obj.crit = crit;
+
+var _push = 5; 
+var _dir = point_direction(x, y, other.x, other.y);
+var _hspd = lengthdir_x(_push, _dir);
+var _vspd = lengthdir_y(_push, _dir);
+
+other.x += _hspd;
+other.y += _vspd;
+
 _sword_comeback = true;
 instance_destroy();
